@@ -67,6 +67,7 @@ You can view these outputs again by running:
 ```shell
 $ terraform output
 ```
+OPTIONAL 
 
 ## Deploy and access Kubernetes Dashboard
 
