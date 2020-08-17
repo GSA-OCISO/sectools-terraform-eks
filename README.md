@@ -15,9 +15,6 @@ cidr_block_all_workers = <>
 ```
 
 ```shell
-$ terraform validate
-
-```shell
 $ terraform init
 
 # Output truncated...
