@@ -18,7 +18,6 @@ module "eks" {
       additional_userdata           = "echo foo bar"
       asg_desired_capacity          = 3
       key_name                      = var.aws_key_name
-      subnet_id                     = var.subnet_id
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
     },
     {
@@ -28,7 +27,6 @@ module "eks" {
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
       asg_desired_capacity          = 3
       key_name                      = var.aws_key_name
-      subnet_id                     = var.subnet_id
     },
   ]
 }
