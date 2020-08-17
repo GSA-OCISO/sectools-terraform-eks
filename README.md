@@ -3,6 +3,8 @@ Terraform for EKS cluster deployment
 
 Initalize your Terraform workspace with values in a `terraform.tfvars` file.
 
+```shell
+$ touch terraform.tfvars
 aws_key_name = <>
 subnets_private_id = <>
 subnet_id = <>
@@ -10,6 +12,7 @@ vpc_id = <>
 cidr_block_worker_group_1 = <>
 cidr_block_worker_group_2 = <>
 cidr_block_all_workers = <>
+```
 
 ```shell
 $ terraform validate
