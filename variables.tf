@@ -18,11 +18,6 @@ variable "vpc_id" {
   description = "ID of the VPC "
 }
 
-variable "subnet_id" {
-  type = string
-  description = "ID of instance subnet "
-}
-
 variable "cidr_block_worker_group_1" {
   type    = list(string)
   description = "List of CIDR blocks needing access to Worker Group 1"
