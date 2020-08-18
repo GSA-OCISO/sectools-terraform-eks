@@ -1,7 +1,7 @@
 # sectools-terraform-eks
 Terraform for EKS cluster deployment
 
-Initalize your Terraform workspace with values in a `terraform.tfvars` file.
+Initalize your Terraform workspace with required values in a `terraform.tfvars` file.
 
 ```shell
 $ touch terraform.tfvars
