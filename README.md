@@ -1,5 +1,7 @@
 # sectools-terraform-eks
-Terraform for EKS cluster deployment
+Terraform for EKS cluster deployment on AWS
+
+## Configure Terraform and build infrastructure
 
 Initalize your Terraform workspace with required values in a `terraform.tfvars` file.
 
