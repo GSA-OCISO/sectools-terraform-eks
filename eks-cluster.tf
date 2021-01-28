@@ -1,26 +1,32 @@
 module "eks" {
-  source       = "terraform-aws-modules/eks/aws"
-  cluster_name = local.cluster_name
-  subnets = var.subnets_private_id
+  source          = "terraform-aws-modules/eks/aws"
+  cluster_name    = local.cluster_name
   cluster_version = "1.18"
-
+  subnets         = module.vpc.private_subnets
+    
   tags = {
     Environment = "production"
     GithubRepo  = "sectools-terraaform-eks"
     GithubOrg   = "gsa-ociso"
   }
 
-  vpc_id = var.vpc_id
+  vpc_id = module.vpc.vpc_id
 
   worker_groups = [
     {
-      name                          = "k8s-worker-group"
-      instance_type                 = var.instance_type
-      additional_userdata           = "GSA OCISO"
-      asg_desired_capacity          = 3
-      key_name                      = var.aws_key_name
+      name                          = "sectools-k8s-worker-group"
+      instance_type                 = "m4.xlarge"
+      additional_userdata           = "GSA OCISO SecTools k8s cluster"
+      asg_desired_capacity          = 2
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
-    }
+    },
+    {
+      name                          = "worker-group-2"
+      instance_type                 = "t2.medium"
+      additional_userdata           = "echo foo bar"
+      additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
+      asg_desired_capacity          = 1
+    },
   ]
 }
 
