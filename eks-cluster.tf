@@ -17,6 +17,7 @@ module "eks" {
       name                          = "sectools-k8s-worker-group"
       instance_type                 = "m4.xlarge"
       additional_userdata           = "GSA OCISO SecTools k8s cluster"
+      key_name                      = "eks-ssh"
       asg_desired_capacity          = 3
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
     },
