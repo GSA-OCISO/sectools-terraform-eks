@@ -5,18 +5,18 @@ module "eks" {
   cluster_version = "1.18"
 
   tags = {
-    Environment = "training"
-    GithubRepo  = "terraform-aws-eks"
-    GithubOrg   = "terraform-aws-modules"
+    Environment = "production"
+    GithubRepo  = "sectools-terraaform-eks"
+    GithubOrg   = "gsa-ociso"
   }
 
   vpc_id = var.vpc_id
 
   worker_groups = [
     {
-      name                          = "worker-group-1"
+      name                          = "k8s-worker-group"
       instance_type                 = var.instance_type
-      additional_userdata           = "echo foo bar"
+      additional_userdata           = "GSA OCISO"
       asg_desired_capacity          = 3
       key_name                      = var.aws_key_name
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
