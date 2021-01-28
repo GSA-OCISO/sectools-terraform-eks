@@ -9,7 +9,6 @@ Initalize your Terraform workspace with required values in a `terraform.tfvars` 
 $ touch terraform.tfvars
 aws_key_name = <>
 subnets_private_id = <>
-subnet_id = <>
 vpc_id = <>
 cidr_block_worker_group_1 = <>
 cidr_block_all_workers = <>
