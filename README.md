@@ -12,7 +12,6 @@ subnets_private_id = <>
 subnet_id = <>
 vpc_id = <>
 cidr_block_worker_group_1 = <>
-cidr_block_worker_group_2 = <>
 cidr_block_all_workers = <>
 ```
 
