@@ -17,15 +17,8 @@ module "eks" {
       name                          = "sectools-k8s-worker-group"
       instance_type                 = "m4.xlarge"
       additional_userdata           = "GSA OCISO SecTools k8s cluster"
-      asg_desired_capacity          = 2
+      asg_desired_capacity          = 3
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
-    },
-    {
-      name                          = "worker-group-2"
-      instance_type                 = "t2.medium"
-      additional_userdata           = "echo foo bar"
-      additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
-      asg_desired_capacity          = 1
     },
   ]
 }
