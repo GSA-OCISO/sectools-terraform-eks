@@ -1,5 +1,6 @@
 # sectools-terraform-eks
 Terraform for EKS cluster deployment on AWS
+Required version 0.12.30
 
 ## Configure Terraform and build infrastructure
 
