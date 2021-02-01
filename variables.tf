@@ -1,6 +1,6 @@
 variable "aws_key_name" {
   type = string
-  description = "aws ec2 key name used to authenticate"
+  description = "aws ec2 key name used to authenticate to cluster nodes"
 }
 
 variable "instance_type" {
@@ -27,4 +27,5 @@ variable "cidr_block_all_workers" {
   type    = list(string)
   description = "List of CIDR blocks needing access to all Worker Groups"
 }
+
 
