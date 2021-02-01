@@ -1,12 +1,12 @@
 module "eks" {
-  source          = "terraform-aws-modules/eks/aws"
-  cluster_name    = local.cluster_name
+  source       = "terraform-aws-modules/eks/aws"
+  cluster_name = local.cluster_name
+  subnets = var.subnets_private_id
   cluster_version = "1.18"
-  subnets         = var.subnets_private_id
-    
+
   tags = {
     Environment = "production"
-    GithubRepo  = "sectools-terraaform-eks"
+    GithubRepo  = "sectools-terraform-eks"
     GithubOrg   = "gsa-ociso"
   }
 
@@ -14,14 +14,18 @@ module "eks" {
 
   worker_groups = [
     {
-      name                          = "sectools-k8s-worker-group"
-      instance_type                 = "m4.xlarge"
+      name                          = "sectools-k8s-worker-group-1"
+      instance_type                 = var.instance_type
       additional_userdata           = "GSA OCISO SecTools k8s cluster"
-      key_name                      = "eks-ssh"
       asg_desired_capacity          = 3
+      key_name                      = var.aws_key_name
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
-    },
+    }
   ]
+
+  workers_group_defaults = {
+        root_volume_type = "gp2"
+  }
 }
 
 data "aws_eks_cluster" "cluster" {
