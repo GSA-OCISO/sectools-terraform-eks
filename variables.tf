@@ -28,4 +28,9 @@ variable "cidr_block_all_workers" {
   description = "List of CIDR blocks needing access to all Worker Groups"
 }
 
+variable "ami_id" {
+  type = string
+  description = "AMI of hardened Amazon Linux AMI"  
+}
+
 
