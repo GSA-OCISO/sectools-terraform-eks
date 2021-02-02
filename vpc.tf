@@ -11,7 +11,7 @@ provider "aws" {
 data "aws_availability_zones" "available" {}
 
 locals {
-  cluster_name = "gsa-ociso-sectools-production-eks"
+  cluster_name = "gsa-ociso-sectools-prod-eks"
 }
 
 resource "random_string" "suffix" {
