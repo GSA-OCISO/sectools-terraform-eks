@@ -37,5 +37,5 @@ resource "aws_security_group" "all_worker_mgmt" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-                                                                                                                                           1,1           Top
+
 }
