@@ -57,7 +57,7 @@ The following command will get the access credentials for your cluster and autom
 configure `kubectl`.
 
 ```shell
-$ aws eks --region us-east-1 update-kubeconfig --name gsa-ociso-sectools-production-eks
+$ aws eks --region us-east-1 update-kubeconfig --name gsa-ociso-sectools-prod-eks
 ```
 
 The
