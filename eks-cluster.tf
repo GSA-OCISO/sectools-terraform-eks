@@ -3,6 +3,7 @@ module "eks" {
   cluster_name = local.cluster_name
   subnets = var.subnets_private_id
   cluster_version = "1.18"
+  enabled_cluster_log_types = ["audit"]
 
   tags = {
     Environment = "production"
@@ -35,8 +36,4 @@ data "aws_eks_cluster" "cluster" {
 
 data "aws_eks_cluster_auth" "cluster" {
   name = module.eks.cluster_id
-}
-  
-resource "aws_eks_cluster" "this" {
-  enabled_cluster_log_types = ["audit"]
-}  
+} 
