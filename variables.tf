@@ -23,6 +23,11 @@ variable "cidr_block_worker_group_1" {
   description = "List of CIDR blocks needing access to Worker Group 1"
 }
 
+variable "cidr_block_worker_group_2" {
+  type    = list(string)
+  description = "List of CIDR blocks needing access to Worker Group 2"
+}
+
 variable "cidr_block_all_workers" {
   type    = list(string)
   description = "List of CIDR blocks needing access to all Worker Groups"
