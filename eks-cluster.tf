@@ -20,6 +20,14 @@ module "eks" {
       asg_desired_capacity          = 3
       key_name                      = var.aws_key_name
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
+    },
+    {
+      name                          = "sectools-k8s-worker-group-2"
+      instance_type                 = var.instance_type
+      additional_userdata           = "GSA OCISO SecTools k8s cluster"
+      asg_desired_capacity          = 3
+      key_name                      = var.aws_key_name
+      additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
     }
   ]
 
