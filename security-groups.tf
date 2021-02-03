@@ -9,6 +9,14 @@ resource "aws_security_group" "worker_group_mgmt_one" {
 
     cidr_blocks = var.cidr_block_worker_group_1
   }
+  
+  ingress {
+    from_port = 3000
+    to_port   = 3000
+    protocol  = "tcp"
+
+    cidr_blocks = var.cidr_block_worker_group_1
+  }
 
   egress {
     from_port   = 0
