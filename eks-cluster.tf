@@ -25,7 +25,7 @@ module "eks" {
 
   workers_group_defaults = {
         root_volume_type = "gp2"
-        ami_id = var.ami_id
+        #ami_id = var.ami_id
   }
 }
 
