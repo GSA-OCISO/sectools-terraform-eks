@@ -14,7 +14,7 @@ locals {
   cluster_name = "gsa-ociso-sectools-prod-eks"
 }
 
-resource "random_string" "suffix" {
-  length  = 8
-  special = false
-}
+#resource "random_string" "suffix" {
+#  length  = 8
+#  special = false
+#}
