@@ -17,7 +17,7 @@ module "eks" {
       name                          = "sectools-k8s-worker-group-1"
       instance_type                 = var.instance_type
       additional_userdata           = "GSA OCISO SecTools k8s cluster"
-      asg_desired_capacity          = 6
+      asg_desired_capacity          = 3
       key_name                      = var.aws_key_name
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
     }
@@ -25,7 +25,7 @@ module "eks" {
 
   workers_group_defaults = {
         root_volume_type = "gp2"
-        #ami_id = var.ami_id
+        ami_id = var.ami_id
   }
 }
 
