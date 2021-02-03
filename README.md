@@ -14,6 +14,7 @@ ami_id = <>
 aws_key_name = <>
 instance_type = <>
 cidr_block_worker_group_1 = <>
+cidr_block_worker_group_2 = <>
 cidr_block_all_workers = <>
 ```
 
