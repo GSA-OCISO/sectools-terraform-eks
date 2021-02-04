@@ -5,7 +5,7 @@ resource "aws_security_group" "worker_group_mgmt_one" {
   ingress {
     from_port = 0
     to_port   = 65535
-    protocol  = "-1"
+    protocol  = "tcp"
 
     cidr_blocks = var.cidr_block_worker_group_1
   }
@@ -26,7 +26,7 @@ resource "aws_security_group" "worker_group_mgmt_two" {
   ingress {
     from_port = 0
     to_port   = 65535
-    protocol  = "-1"
+    protocol  = "tcp"
 
     cidr_blocks = var.cidr_block_worker_group_2
   }
